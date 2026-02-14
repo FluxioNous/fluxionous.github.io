@@ -136,9 +136,47 @@
             color: #333;
         }
 
-        .content b {
-            font-weight: 700;
-            color: #000;
+        /* Contact Section Styles */
+        .contact-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--logo-dark);
+        }
+
+        .btn-primary {
+            background-color: var(--logo-dark);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--logo-dark);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 17, 40, 0.15);
+            opacity: 0.9;
         }
 
         footer {
@@ -169,6 +207,8 @@
             .motto { border-left: none; padding-left: 0; border-top: 2px solid #eee; padding-top: 10px; }
             main { padding: 40px 25px; }
             .logo { max-width: 300px; }
+            .contact-buttons { flex-direction: column; }
+            .btn { justify-content: center; }
         }
     </style>
 </head>
@@ -206,6 +246,15 @@
                 
                 
                 <p>From the clean logic of simple simulations to the stochastic complexity of physical phenomena, we bridge the gap between digital reasoning and the physical plane. By grounding intelligence in the fabric of <b>World Dynamics</b>, we are building the foundation for agents that are as versatile as they are robust—capable of performing with intuition and precision across all domains.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <span class="section-label">Connect</span>
+            <div class="contact-buttons">
+                <a href="mailto:admin@fluxionous.com" class="btn btn-primary">Email Operations</a>
+                <a href="https://linkedin.com/company/fluxionous" class="btn btn-secondary">LinkedIn</a>
+                <a href="https://x.com/fluxionous" class="btn btn-secondary">Twitter / X</a>
             </div>
         </section>
     </main>
