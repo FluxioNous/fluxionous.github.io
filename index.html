@@ -7,39 +7,133 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
     <style>
-        :root { --bg: #0a0a0a; --text: #ececec; --accent: #666; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; line-height: 1.6; }
-        .container { max-width: 700px; padding: 40px; }
-        header { border-left: 2px solid var(--accent); padding-left: 24px; margin-bottom: 60px; }
-        h1 { font-weight: 600; font-size: 1.5rem; letter-spacing: -0.02em; margin: 0; text-transform: uppercase; color: #fff; }
-        p.tagline { color: var(--accent); font-size: 0.9rem; margin-top: 4px; }
-        .vision-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 24px; color: #fff; }
-        .vision-text { font-size: 1.1rem; color: #b0b0b0; }
-        .vision-text b { color: #fff; font-weight: 400; }
-        footer { margin-top: 80px; font-size: 0.8rem; color: var(--accent); border-top: 1px solid #222; padding-top: 20px; }
-        .status-dot { height: 8px; width: 8px; background-color: #00ff88; border-radius: 50%; display: inline-block; margin-right: 6px; }
+        :root {
+            --bg-color: #121212;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #00ff88; /* Stealth Status Green */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Top Header Area */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .logo {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: #999;
+            margin: 0;
+        }
+
+        /* The Vision Card */
+        main {
+            width: 90%;
+            max-width: 650px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .content p {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .content b {
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* Footer / Status Area */
+        footer {
+            text-align: center;
+            padding-bottom: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .status-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 0 8px var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            main { padding: 30px; }
+            .logo { max-width: 200px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>FluxioNous</h1>
-            <p class="tagline">World Models for Physical AI</p>
-        </header>
 
-        <section class="vision-section">
-            <h2>Our Vision</h2>
-            <div class="vision-text">
-                <p>Most AI today lives in a vacuum of text and pixels. At FluxioNous, we believe the next frontier is <b>Embodied Intelligence</b>.</p>
-                <p>We are building high-fidelity <b>World Models</b>—internal neural representations that allow machines to understand the causal laws of physics, spatial relationships, and temporal dynamics. </p>
-                <p>By simulating the complexities of the real world before acting within it, we are bridging the gap between digital reasoning and <b>Physical AI</b>. Our mission is to grant machines the intuition to move, interact, and evolve safely in the physical plane.</p>
-            </div>
-        </section>
+    <header>
+        <img src="logo.png" alt="FluxioNous Logo" class="logo">
+        <p class="tagline">World Models for Physical AI</p>
+    </header>
 
-        <footer>
-            <div><span class="status-dot"></span> Currently in Stealth | Montreal, QC</div>
-            <p>&copy; 2026 FluxioNous. All rights reserved.</p>
-        </footer>
-    </div>
+    <main>
+        <h2>Our Vision</h2>
+        <div class="content">
+            <p>Most AI today lives in a vacuum of text and pixels. At FluxioNous, we believe the next frontier is <b>Embodied Intelligence</b>.</p>
+            
+            <p>We are building high-fidelity <b>World Models</b>—internal neural representations that allow machines to understand the causal laws of physics, spatial relationships, and temporal dynamics.</p>
+            
+            <p>By simulating the complexities of the real world before acting within it, we are bridging the gap between digital reasoning and <b>Physical AI</b>. Our mission is to grant machines the intuition to move, interact, and evolve safely in the physical plane.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="status-container">
+            <span class="status-dot"></span>
+            <span>Currently in Stealth | Montreal, QC</span>
+        </div>
+        <div>&copy; 2026 FluxioNous. All rights reserved.</div>
+    </footer>
+
 </body>
 </html>
