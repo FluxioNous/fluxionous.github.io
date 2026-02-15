@@ -7,7 +7,7 @@
     <meta name="description" content="FluxioNous: Mastering world dynamics to forge universal intelligence through foundational world models.">
     <title>FluxioNous | Intelligence in Motion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
     <style>
         :root {
@@ -98,10 +98,16 @@
         }
 
         .phonetic { 
-            font-family: monospace; 
-            color: var(--text-muted); 
-            font-size: 1.1rem;
-            margin-right: 12px;
+            font-family: 'Inter', monospace; 
+            font-style: italic;
+            color: var(--logo-dark); 
+            background: #f4f4f4; /* Creates a subtle 'pill' background */
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-left: 8px;
+            font-weight: 400;
+            vertical-align: middle;
         }
 
         main {
@@ -158,20 +164,22 @@
         }
     
         .social-icon {
-            color: #888; /* Muted gray by default */
-            font-size: 1.8rem; /* Large, clickable icons */
-            transition: all 0.3s ease;
+            color: #444; /* Darker gray so it's always visible */
+            font-size: 2rem; /* Slightly larger for better visibility */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            opacity: 0.8; /* Subtle transparency until hover */
         }
     
         /* Hover effect: Changes to your brand's dark indigo */
         .social-icon:hover {
             color: var(--logo-dark);
-            transform: translateY(-5px);
+            opacity: 1;
+            transform: translateY(-8px) scale(1.1); /* More pronounced 'pop' */
         }
     
         /* Tooltip style: Shows the name of the platform on hover */
@@ -190,6 +198,11 @@
     
         .social-icon:hover::after {
             opacity: 1;
+        }
+
+        /* Ensure the icons themselves have a clean transition */
+        .social-icon i {
+            display: block;
         }
     
         /* Hugging Face Custom Color if you want it subtle */
