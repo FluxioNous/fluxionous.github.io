@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="logo_icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FluxioNous: Mastering world dynamics to forge universal intelligence through foundational world models.">
+    <title>FluxioNous | Intelligence in Motion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+    <style>
+        :root {
+            --bg-color: #ffffff; 
+            --text-main: #111111;
+            --text-muted: #555555;
+            /* --logo-dark: #0a1128; */
+            --logo-dark: #313168; /* Your Core Logo Indigo */
+            --status-green: #00c853;
+        }
+
+        /* Global */
+        body {
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 30px;
+            max-width: 900px;
+        }
+
+        .logo {
+            /* Scaled up logo */
+            max-width: 750px; 
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        .brand-title-container {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .brand-name {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0;
+            color: var(--logo-dark);
+        }
+
+        .motto {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            border-left: 2px solid #ddd;
+            padding-left: 20px;
+        }
+
+        .etymology-box {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Subtitles: Bigger, Bolder, Darker */
+        .section-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.35em;
+            color: var(--logo-dark);
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .etymology-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+
+        .phonetic { 
+            font-family: 'Inter', monospace; 
+            font-style: italic;
+            color: var(--logo-dark); 
+            background: #f4f4f4; /* Creates a subtle 'pill' background */
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-left: 8px;
+            font-weight: 400;
+            vertical-align: middle;
+        }
+
+        main {
+            width: 95%;
+            max-width: 850px;
+            /* background: var(--card-bg); */
+            background: var(--bg-color); /* Matches body for seamless look */
+            /* border: 1px solid var(--card-border); */
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 60px 80px; /* Reduced top/bottom padding from 80px to 60px */
+            margin-bottom: 60px; /* Reduced from 100px to 60px */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        main:hover {
+            transform: translateY(-4px);
+        }
+
+        .mission-statement {
+            font-weight: 700;
+            font-size: 2.4rem;
+            margin: 0 0 60px 0;
+            color: var(--text-main);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .vision-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Contact/Connect Section Styles */
+        .contact-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: left;
+        }
+    
+        .icon-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+    
+        .social-icon {
+            color: #444; /* Darker gray so it's always visible */
+            font-size: 2rem; /* Slightly larger for better visibility */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            opacity: 0.8; /* Subtle transparency until hover */
+        }
+    
+        /* Hover effect: Changes to your brand's dark indigo */
+        .social-icon:hover {
+            color: var(--logo-dark);
+            opacity: 1;
+            transform: translateY(-8px) scale(1.1); /* More pronounced 'pop' */
+        }
+    
+        /* Tooltip style: Shows the name of the platform on hover */
+        .social-icon::after {
+            content: attr(data-name);
+            position: absolute;
+            bottom: -25px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+    
+        .social-icon:hover::after {
+            opacity: 1;
+        }
+
+        /* Ensure the icons themselves have a clean transition */
+        .social-icon i {
+            display: block;
+        }
+    
+        /* Hugging Face Custom Color if you want it subtle */
+        /* .bi-emoji-smile-fill { color: #FFD21E; }  */
+    
+        #copyNote {
+            font-size: 0.8rem;
+            color: var(--status-green);
+            margin-top: 25px;
+            font-weight: 600;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding-bottom: 80px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .status-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            background-color: var(--status-green);
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 60px 20px 40px; }
+            .logo { max-width: 90%; }
+            .brand-name { font-size: 2.5rem; }
+            .brand-title-container { flex-direction: column; align-items: center; gap: 10px; }
+            .motto { border-left: none; padding-left: 0; border-top: 1px solid #ddd; padding-top: 10px; font-size: 1rem; }
+            main { padding: 40px 20px; width: 100%; box-sizing: border-box; }
+            .mission-statement { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="FluxioNous Logo" class="logo">
+        
+        <div class="brand-title-container">
+            <h1 class="brand-name">FluxioNous</h1>
+            <div class="motto">Intelligence in Motion</div>
+        </div>
+
+        <div class="etymology-box">
+            <span class="section-label">The Identity</span>
+            <div class="etymology-text">
+                <b>FluxioNous</b>
+                <span class="phonetic">[/ˈflʌkʃioʊ-noʊs/]</span>
+                is a synthesis of <b>Fluxio</b>—the mathematical study of change and continuous motion—and <b>Nous</b>—the faculty of intellectual apprehension and grounding. It represents our core conviction: that true intelligence is born from the mastery of dynamic systems.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <span class="section-label">The Mission</span>
+        <h2 class="mission-statement">Mastering World Dynamics to Forge Universal Intelligence.</h2>
+        
+        <section class="vision-section">
+            <span class="section-label">The Vision</span>
+            <div class="content">
+                <p>We believe that the path to <b>Artificial General Intelligence (AGI)</b> is not paved with more data, but with a deeper mastery of the environment. True intelligence is the ability to internalize the causal structure of any system—to predict, simulate, and act within the constraints of reality.</p>
+                
+                <p>At <b>FluxioNous</b>, we are developing <b>Universal Agents</b> designed to transcend narrow tasks. Our agents do not rely on brute-force pattern matching; they are built upon robust <b>World Models</b> that capture the fundamental laws governing dynamical systems.</p>
+
+                
+                
+                <p>From the clean logic of simple simulations to the stochastic complexity of physical phenomena, we bridge the gap between digital reasoning and the physical plane. By grounding intelligence in the fabric of <b>World Dynamics</b>, we are building the foundation for agents that are as versatile as they are robust—capable of performing with intuition and precision across all domains.</p>
+            </div>
+        </section>
+        
+        <section class="contact-section">
+            <span class="section-label">Connect</span>
+            <div class="icon-grid">
+                <a href="mailto:admin@fluxionous.com" class="social-icon" data-name="Email" id="emailBtn">
+                    <i class="bi bi-envelope-at-fill"></i>
+                </a>
+        
+                <a href="https://github.com/fluxionous" target="_blank" class="social-icon" data-name="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+        
+                <a href="https://huggingface.co/fluxionous" target="_blank" class="social-icon" data-name="Hugging Face">
+                    <i class="bi bi-emoji-smile-fill"></i>
+                </a>
+        
+                <a href="https://linkedin.com/company/fluxionous" target="_blank" class="social-icon" data-name="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+        
+                <a href="https://x.com/fluxionous" target="_blank" class="social-icon" data-name="Twitter">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+        
+                <a href="https://instagram.com/fluxionous" target="_blank" class="social-icon" data-name="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+            <p id="copyNote">Email copied to clipboard.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="status-container">
+            <span class="status-dot"></span>
+            <span>Stealth Phase | Neural Research Operations | Montreal, QC</span>
+        </div>
+        <div>&copy; 2026 FluxioNous. All rights reserved.</div>
+    </footer>
+
+    <script>
+        document.getElementById('emailBtn').addEventListener('click', function(e) {
+            const email = "admin@fluxionous.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const note = document.getElementById('copyNote');
+                note.style.display = 'block';
+                setTimeout(() => { note.style.display = 'none'; }, 3000);
+            });
+        });
+    </script>
+
+</body>
+</html>
